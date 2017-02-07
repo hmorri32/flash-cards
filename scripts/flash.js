@@ -1,5 +1,8 @@
-const filterMe = (array) => {
-  return array
+
+function Card({ question, answer }){
+  this.question = question;
+  this.answer = answer;
 }
 
-export default filterMe
+
+export default Card;
