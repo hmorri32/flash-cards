@@ -4,15 +4,17 @@ function Guess({ response, question }){
 }
 
 Guess.prototype.correct = function(){
-  let {answer} = this.question;
-  return response === this.response ? true : false;
+  let { answer } = this.question;
+  return answer === this.response ? true : false;
 }
 
 Guess.prototype.feedback = function(){
-
+  if(this.correct() === true){
+    return "Correct!"
+  } else {
+    return "Incorrect!!!"
+  }
 }
-
-
 
 
 export default Guess;
