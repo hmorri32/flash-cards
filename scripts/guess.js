@@ -5,7 +5,11 @@ function Guess({ response, question }){
 
 Guess.prototype.correct = function(){
   let {answer} = this.question;
-  return answer === this.response ? true : false;
+  return response === this.response ? true : false;
+}
+
+Guess.prototype.feedback = function(){
+
 }
 
 

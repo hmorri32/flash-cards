@@ -18,12 +18,32 @@ describe("testing guess", function() {
     assert.equal(guess.response, 'suhhhhhh')
   })
 
-  it('dunno yet...', function() {
-  let card = new Card({});
-  let guess = new Guess({ question: card });
+  it('Guess should be able to accept a card', function() {
+    let card = new Card({});
+    let guess = new Guess({ question: card });
 
-  assert.isObject(guess.question);
-});
+    assert.isObject(guess.question);
+  });
+
+  it("Guess should be able to access card's question", function() {
+    let card = new Card({ question: 'suh'})
+    let guess = new Guess({ question: card})
+
+    assert.equal(guess.question.question, 'suh')
+  })
+
+  it("Guess should be able to access card's answer", function() {
+    let card = new Card({ answer: 'suh'})
+    let guess = new Guess({ response: card})
+
+    assert.equal(guess.response.answer, 'suh')
+  })
+
+  
+
+
+
+
 
 
 
