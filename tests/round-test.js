@@ -129,6 +129,32 @@ describe('testing round', function(){
     assert.isFunction(round.percentCorrect)
   })
 
+  it('percentCorrect should return the amount of guesses that are correct', function() {
+    let card1 = new Card({question: "What is the capital of Alaska?", answer: "dude"})
+    let card2 = new Card({question: "What is the capital of Alaska?", answer: "what"})
+    let card3 = new Card({question: "What is the capital of Alaska?", answer: "is"})
+    let card4 = new Card({question: "What is the capital of Alaska?", answer: "up"})
+
+
+    let deck  = new Deck([card1, card2, card3, card4])
+    deck.addCard(card1)
+    deck.addCard(card2)
+    deck.addCard(card3)
+    deck.addCard(card4)
+
+    let round = new Round(deck)
+    
+    round.recordGuess('dude')
+    round.recordGuess('what')
+    round.recordGuess('suh')
+    round.recordGuess('suhhhh')
+
+    round.countCorrect()
+    round.percentCorrect()
+
+    assert.equal(round.percentCorrect(), 50)
+  })
+
 
 
 

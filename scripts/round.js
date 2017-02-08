@@ -28,7 +28,7 @@ Round.prototype.countCorrect = function(){
 }
 
 Round.prototype.percentCorrect = function(){
-
+  return this.numberCorrect / this.guessCount * 100;
 
 }
 
