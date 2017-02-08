@@ -6,8 +6,8 @@ Deck.prototype.addCard = function(card){
   this.cards.push(card)
 }
 
-// Deck.prototype.count = function(){
-//
-// }
+Deck.prototype.count = function(){
+  return this.cards.length
+}
 
 export default Deck

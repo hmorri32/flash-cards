@@ -5,10 +5,12 @@ import Card               from "../scripts/flash";
 
 describe("testing guess", function() {
   it('guess should be a function', function() {
+
     assert.isFunction(Guess)
   });
 
   it('should recognize card as a function', function() {
+    
     assert.isFunction(Card)
   })
 

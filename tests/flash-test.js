@@ -1,7 +1,7 @@
 import { expect, assert } from 'chai';
 import Card from "../scripts/flash.js";
 
-describe("testing card constructor", function() {
+describe("testing card", function() {
 
   it("card should be a function", function() {
     assert.isFunction(Card);
