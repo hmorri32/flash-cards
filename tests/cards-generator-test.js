@@ -6,7 +6,7 @@ import Card               from '../scripts/flash';
 
 describe('testing card-generator', function(){
 
-  it.only('should work', function(){
+  it('should work', function(){
     let cardgen = new CardGenerator({filePath: 'cards.txt'})
     console.log(cardgen)
 
