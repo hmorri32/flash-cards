@@ -13,7 +13,7 @@ Guess.prototype.correct = function(){
 }
 
 Guess.prototype.feedback = function(){
-  if(this.correct() === true){
+  if(this.correct()){
     return "Correct!"
   } else {
     return "Incorrect!!!"
