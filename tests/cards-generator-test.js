@@ -4,9 +4,9 @@ import Card               from '../scripts/flash';
 
 // console.log(cardgen)
 
-describe('testing card-generator', function(){
+describe('testing card-generator', () => {
 
-  it('should work', function(){
+  it('should work', () => {
     let cardgen = new CardGenerator({filePath: 'cards.txt'})
     console.log(cardgen)
 
