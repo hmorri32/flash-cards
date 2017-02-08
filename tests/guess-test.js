@@ -18,26 +18,12 @@ describe("testing guess", function() {
     assert.equal(guess.response, 'suhhhhhh')
   })
 
-  it('Guess should be able to accept a card', function() {
+  it('Guess should be able to accept a card object', function() {
     let card  = new Card({});
     let guess = new Guess({ question: card });
 
     assert.isObject(guess.question);
   });
-
-  it("Guess should be able to access card's question", function() {
-    let card  = new Card({ question: 'suh'})
-    let guess = new Guess({ question: card})
-
-    assert.equal(guess.question.question, 'suh')
-  })
-
-  it("Guess should be able to access card's answer", function() {
-    let card  = new Card({ answer: 'suh'})
-    let guess = new Guess({ response: card})
-
-    assert.equal(guess.response.answer, 'suh')
-  })
 
   it("Guess should be able to access both the card's question and answer", function(){
     let card  = new Card ({ question: "Which planet is closest to the sun?", answer: "mercury"})
@@ -52,7 +38,6 @@ describe("testing guess", function() {
     let guess = new Guess ({ response: 'suh', question: card})
 
     assert.equal(guess.correct(), false);
-
   })
 
   it('guess should accept a correct answer and determine that it is correct ', function(){
@@ -60,7 +45,6 @@ describe("testing guess", function() {
     let guess = new Guess ({ response: "mercury", question: card})
 
     assert.equal(guess.correct(), true);
-
   })
 
   it("should give negative feedback if you got the incorrect answer", function(){
