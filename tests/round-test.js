@@ -5,12 +5,12 @@ import Guess              from "../scripts/guess";
 import Deck               from "../scripts/deck";
 
 
-describe('testing round', function(){
-  it("round should be a function", function() {
+describe('testing round', () => {
+  it("round should be a function", () => {
     assert.isFunction(Round);
   });
 
-  it('should accept a card and a deck ', function(){
+  it('should accept a card and a deck ', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     deck.addCard(card1)
@@ -19,7 +19,7 @@ describe('testing round', function(){
     expect(deck.cards).to.deep.equal([{ question: 'What is the capital of Alaska?', answer: 'Juneau' } ])
   })
 
-  it('should be able to keep track of guesses by using an array ', function() {
+  it('should be able to keep track of guesses by using an array ', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     deck.addCard(card1)
@@ -28,14 +28,14 @@ describe('testing round', function(){
     assert.isArray(round.guesses)
   })
 
-  it('should have a currentCard function', function() {
+  it('should have a currentCard function', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
     assert.isFunction(round.currentCard);
   })
 
-  it('currentCard should return the current card', function() {
+  it('currentCard should return the current card', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
@@ -44,14 +44,14 @@ describe('testing round', function(){
     expect(round.currentCard()).to.deep.equal({question: "What is the capital of Alaska?", answer: "Juneau"})
   })
 
-  it('should recognize recordGuess as a function', function() {
+  it('should recognize recordGuess as a function', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
     assert.isFunction(round.recordGuess);
   })
 
-  it('should record and keep count of guesses', function() {
+  it('should record and keep count of guesses', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
@@ -61,7 +61,7 @@ describe('testing round', function(){
     expect(round.guesses.length).to.equal(1)
   })
 
-  it('should be able to determine whether a guess is incorrect', function(){
+  it('should be able to determine whether a guess is incorrect', () => {
 
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
@@ -73,7 +73,7 @@ describe('testing round', function(){
 
   })
 
-  it('should be able to determine whether a guess is correct', function(){
+  it('should be able to determine whether a guess is correct', () => {
 
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
@@ -85,7 +85,7 @@ describe('testing round', function(){
 
   })
 
-  it('should be able to give negative feedback for incorect guesses', function(){
+  it('should be able to give negative feedback for incorect guesses', () => {
 
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
@@ -97,7 +97,7 @@ describe('testing round', function(){
 
   })
 
-  it('should be able to give positive feedback for correct guesses', function(){
+  it('should be able to give positive feedback for correct guesses', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
@@ -107,12 +107,12 @@ describe('testing round', function(){
     assert.equal(round.guesses[0].feedback(), "Correct!")
   })
 
-  it('should recognize countCorrect as a function', function () {
+  it('should recognize countCorrect as a function', () => {
     let round = new Round()
     assert.isFunction(round.countCorrect)
   })
 
-  it('countCorrect should display the number of correct guesses', function () {
+  it('countCorrect should display the number of correct guesses', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
@@ -124,12 +124,12 @@ describe('testing round', function(){
     assert.equal(round.numberCorrect, 1)
   })
 
-  it('should recognize percentCorrect as a function', function() {
+  it('should recognize percentCorrect as a function', () => {
     let round = new Round()
     assert.isFunction(round.percentCorrect)
   })
 
-  it('percentCorrect should return the amount of guesses that are correct', function() {
+  it('percentCorrect should return the amount of guesses that are correct', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "dude"})
     let card2 = new Card({question: "What is the capital of Alaska?", answer: "what"})
     let card3 = new Card({question: "What is the capital of Alaska?", answer: "is"})
