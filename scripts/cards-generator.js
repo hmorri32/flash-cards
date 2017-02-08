@@ -9,9 +9,9 @@ function CardGenerator({filePath}){
 CardGenerator.prototype.splitter = function(filePath) {
   let words = fs.readFileSync(`./${filePath}`, 'utf8').split('\n');
   return words.map ( card => {
-    let cardSplit = card.split(",");
+    let cardSplit    = card.split(",");
     let textQuestion = cardSplit[0];
-    let textAnswer = cardSplit[1];
+    let textAnswer   = cardSplit[1];
     return new Card({ question: textQuestion, answer: textAnswer})
   })
 }
