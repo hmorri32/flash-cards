@@ -135,7 +135,6 @@ describe('testing round', function(){
     let card3 = new Card({question: "What is the capital of Alaska?", answer: "is"})
     let card4 = new Card({question: "What is the capital of Alaska?", answer: "up"})
 
-
     let deck  = new Deck([card1, card2, card3, card4])
     deck.addCard(card1)
     deck.addCard(card2)
@@ -143,7 +142,7 @@ describe('testing round', function(){
     deck.addCard(card4)
 
     let round = new Round(deck)
-    
+
     round.recordGuess('dude')
     round.recordGuess('what')
     round.recordGuess('suh')
@@ -152,14 +151,8 @@ describe('testing round', function(){
     round.countCorrect()
     round.percentCorrect()
 
-    assert.equal(round.percentCorrect(), 50)
+    assert.equal(round.percentCorrect(), "50%")
   })
-
-
-
-
-
-
 })
 
 
