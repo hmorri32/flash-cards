@@ -2,12 +2,12 @@ import { expect, assert } from 'chai';
 import Deck               from "../scripts/deck";
 import Card               from "../scripts/flash";
 
-describe('testing deck', ()=>{
-  it('should recognize card as a function', ()=> {
+describe('testing deck', () => {
+  it('should recognize card as a function', () => {
     assert.isFunction(Card)
   })
 
-  it('should recognize deck as a function', ()=> {
+  it('should recognize deck as a function', () => {
     assert.isFunction(Deck)
   })
 
