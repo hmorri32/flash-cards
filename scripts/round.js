@@ -12,7 +12,7 @@ class Round {
   recordGuess(userGuess){
     let guess = new Guess({response: userGuess, question: this.currentCard()})
     this.guesses.push(guess)
-    
+
     if(this.guess === this.currentCard()){
       this.numberCorrect += 1;
     }

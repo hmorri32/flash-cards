@@ -62,7 +62,6 @@ describe('testing round', () => {
   })
 
   it('should be able to determine whether a guess is incorrect', () => {
-
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
@@ -74,7 +73,6 @@ describe('testing round', () => {
   })
 
   it('should be able to determine whether a guess is correct', () => {
-
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
@@ -82,11 +80,9 @@ describe('testing round', () => {
     round.recordGuess('Juneau')
 
     expect(round.guesses[0].correct()).to.be.true
-
   })
 
   it('should be able to give negative feedback for incorect guesses', () => {
-
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
     let deck  = new Deck([card1])
     let round = new Round(deck)
@@ -94,7 +90,6 @@ describe('testing round', () => {
     round.recordGuess('suuuuhhhhhhhh')
 
     assert.equal(round.guesses[0].feedback(), "Incorrect!!!")
-
   })
 
   it('should be able to give positive feedback for correct guesses', () => {
@@ -119,6 +114,7 @@ describe('testing round', () => {
     let card4 = new Card({question: "What is the capital of Alaska?", answer: "up"})
 
     let deck  = new Deck([card1, card2, card3, card4])
+
     deck.addCard(card1)
     deck.addCard(card2)
     deck.addCard(card3)
@@ -130,8 +126,9 @@ describe('testing round', () => {
     round.recordGuess('what')
     round.recordGuess('suh')
     round.recordGuess('suhhhh')
+
     console.log(round.numberCorrect)
-    // round.countCorrect()
+
     round.percentCorrect()
 
     assert.equal(round.percentCorrect(), "50%")
