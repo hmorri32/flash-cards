@@ -107,23 +107,6 @@ describe('testing round', () => {
     assert.equal(round.guesses[0].feedback(), "Correct!")
   })
 
-  it('should recognize countCorrect as a function', () => {
-    let round = new Round()
-    assert.isFunction(round.countCorrect)
-  })
-
-  it('countCorrect should display the number of correct guesses', () => {
-    let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"})
-    let deck  = new Deck([card1])
-    let round = new Round(deck)
-    deck.addCard(card1)
-    round.recordGuess('Juneau')
-
-    round.countCorrect()
-
-    assert.equal(round.numberCorrect, 1)
-  })
-
   it('should recognize percentCorrect as a function', () => {
     let round = new Round()
     assert.isFunction(round.percentCorrect)
@@ -147,8 +130,8 @@ describe('testing round', () => {
     round.recordGuess('what')
     round.recordGuess('suh')
     round.recordGuess('suhhhh')
-
-    round.countCorrect()
+    console.log(round.numberCorrect)
+    // round.countCorrect()
     round.percentCorrect()
 
     assert.equal(round.percentCorrect(), "50%")
