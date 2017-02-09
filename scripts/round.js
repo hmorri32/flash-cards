@@ -6,19 +6,28 @@ class Round {
     this.guesses       = [];
     this.numberCorrect = 0;
   }
+
   currentCard() {
     return this.deck.cards.shift();
   }
+
   recordGuess(userGuess) {
-    let guess = new Guess({response: userGuess, question: this.currentCard()});
+    let guess = new Guess({
+      response: userGuess,
+      card: this.currentCard()
+    });
+
     this.guesses.push(guess);
 
-    if (this.guess === this.currentCard()) {
+    if (guess.correct()) {
       this.numberCorrect += 1;
     }
   }
+
+  // fix this thing
+
   percentCorrect() {
-    return this.numberCorrect / this.guesses.length * 100 + '%';
+    return Math.floor(this.numberCorrect / this.guesses.length * 100) + '%';
   }
 }
 

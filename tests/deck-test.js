@@ -14,7 +14,7 @@ describe('testing deck', () => {
 
   it('should be able to add card to deck', () => {
     let card = new Card({});
-    let deck = new Deck({});;
+    let deck = new Deck();;
 
     deck.addCard(card);
     expect(deck.cards).to.include(card);
@@ -26,9 +26,9 @@ describe('testing deck', () => {
     let card3 = new Card({ question: "blah blah?", answer: "North north west"});
     let deck  = new Deck([card1, card2, card3]);
 
-    deck.addCard(card1);
-    deck.addCard(card2);
-    deck.addCard(card3);
+    // deck.addCard(card1);
+    // deck.addCard(card2);
+    // deck.addCard(card3);
 
     assert.equal(deck.count(), 3);
   });

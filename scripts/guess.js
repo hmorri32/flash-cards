@@ -1,12 +1,14 @@
 class Guess {
-  constructor({ response, question }){
+  constructor({ response, card }){
     this.response = response;
-    this.question = question;
+    this.card = card;
   }
+
   correct() {
-    let { answer } = this.question;
-    return answer === this.response ? true : false;
+    let { answer } = this.card;
+    return answer === this.response;
   }
+
   feedback() {
     return this.correct() ? 'Correct!' : 'Incorrect!!!';
   }

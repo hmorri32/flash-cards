@@ -23,43 +23,47 @@ describe("testing guess", () => {
 
   it('Guess should be able to accept a card object', () => {
     let card  = new Card({});
-    let guess = new Guess({ question: card });
+    let guess = new Guess({ card: card });
 
-    assert.isObject(guess.question);
+    assert.isObject(guess.card);
   });
 
   it("Guess should be able to access both the card's question and answer", () => {
-    let card  = new Card ({ question: "Which planet is closest to the sun?", answer: "mercury"});;
-    let guess = new Guess ({question: card});
+    let card  = new Card ({
+      question: "Which planet is closest to the sun?",
+      answer: "mercury"
+    });;
 
-    assert.equal(guess.question.answer, 'mercury');
-    assert.equal(guess.question.question, "Which planet is closest to the sun?");
+    let guess = new Guess ({card: card});
+
+    assert.equal(guess.card.answer, 'mercury');
+    assert.equal(guess.card.question, "Which planet is closest to the sun?");
   });
 
   it('guess should accept a wrong answer and determine that it is wrong ', () => {
     let card  = new Card ({ question: "Which planet is closest to the sun?", answer: "mercury"});
-    let guess = new Guess ({ response: 'suh', question: card});
+    let guess = new Guess ({ response: 'suh', card: card});
 
     assert.equal(guess.correct(), false);
   });
 
   it('guess should accept a correct answer and determine that it is correct ', () => {
     let card  = new Card ({ question: "Which planet is closest to the sun?", answer: "mercury"});
-    let guess = new Guess ({ response: "mercury", question: card});
+    let guess = new Guess ({ response: "mercury", card: card});
 
     assert.equal(guess.correct(), true);
   });
 
   it("should give negative feedback if you got the incorrect answer", () => {
     let card  = new Card ({ question: "Which planet is closest to the sun?", answer: "mercury"});
-    let guess = new Guess ({ response: "suhhhhhhh", question: card});
+    let guess = new Guess ({ response: "suhhhhhhh", card: card});
 
     assert.equal(guess.feedback(), "Incorrect!!!");
   });
 
   it("should give positive feedback if you got the correct answer", () => {
     let card  = new Card ({ question: "Which planet is closest to the sun?", answer: "mercury"});
-    let guess = new Guess ({ response: "mercury", question: card});
+    let guess = new Guess ({ response: "mercury", card: card});
 
     assert.equal(guess.feedback(), "Correct!");
   });

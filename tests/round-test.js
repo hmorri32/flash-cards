@@ -15,7 +15,7 @@ describe('testing round', () => {
   it('should accept a card and a deck ', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"});
     let deck  = new Deck([card1]);
-    deck.addCard(card1);
+    // deck.addCard(card1);
     let round = new Round(deck);
 
     expect(deck.cards).to.deep.equal([{ question: 'What is the capital of Alaska?', answer: 'Juneau' } ]);
@@ -57,7 +57,7 @@ describe('testing round', () => {
     let card1 = new Card({question: "What is the capital of Alaska?", answer: "Juneau"});
     let deck  = new Deck([card1]);
     let round = new Round(deck);
-    deck.addCard(card1);
+
     round.recordGuess('juneau');
 
     expect(round.guesses.length).to.equal(1);
@@ -120,19 +120,21 @@ describe('testing round', () => {
     deck.addCard(card1);
     deck.addCard(card2);
     deck.addCard(card3);
-    deck.addCard(card4);
 
     let round = new Round(deck);
 
+    round.recordGuess('dude1');
+    round.recordGuess('what');
+    round.recordGuess('is');
+    round.recordGuess('suhhhh');
     round.recordGuess('dude');
     round.recordGuess('what');
-    round.recordGuess('suh');
-    round.recordGuess('suhhhh');
+    round.recordGuess('is');
 
     console.log(round.numberCorrect);
 
     round.percentCorrect();
 
-    assert.equal(round.percentCorrect(), "50%");
+    assert.equal(round.percentCorrect(), "71%");
   });
 });

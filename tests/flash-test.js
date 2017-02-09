@@ -10,7 +10,10 @@ describe("testing card", () => {
   });
 
   it('should probz take question and answer as arguments in the constructor', () => {
-    let card = new Card({question: 'Alaska?', answer: 'Juneau'});
+    let card = new Card({
+      question: 'Alaska?', 
+      answer: 'Juneau'
+    });
 
     expect(card.question).to.equal('Alaska?')
     expect(card.answer).to.equal('Juneau')
