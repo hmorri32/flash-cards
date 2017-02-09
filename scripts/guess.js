@@ -5,10 +5,10 @@ class Guess {
   }
   correct(){
     let { answer } = this.question;
-    return answer === this.response ? true : false
+    return answer === this.response ? true : false;
   }
   feedback(){
-    return this.correct() ? "Correct!" : "Incorrect!!!"
+    return this.correct() ? 'Correct!' : 'Incorrect!!!';
   }
 }
 

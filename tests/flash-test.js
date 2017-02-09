@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { expect, assert } from 'chai';
 import Card from "../scripts/flash.js";
 

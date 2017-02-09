@@ -1,13 +1,13 @@
 class Deck{
   constructor({ array}){
-    this.cards = array || []
+    this.cards = array || [];
   }
   addCard(card){
-    this.cards.push(card)
+    this.cards.push(card);
   }
   count(){
-    return this.cards.length
+    return this.cards.length;
   }
 }
 
-export default Deck
+export default Deck;
