@@ -1,4 +1,4 @@
-import Guess from "../scripts/guess";
+import Guess from '../scripts/guess';
 
 class Round {
   constructor(deck) {
@@ -6,18 +6,18 @@ class Round {
     this.guesses       = [];
     this.numberCorrect = 0;
   }
-  currentCard(){
+  currentCard() {
     return this.deck.cards.shift();
   }
-  recordGuess(userGuess){
+  recordGuess(userGuess) {
     let guess = new Guess({response: userGuess, question: this.currentCard()});
     this.guesses.push(guess);
 
-    if(this.guess === this.currentCard()){
+    if (this.guess === this.currentCard()) {
       this.numberCorrect += 1;
     }
   }
-  percentCorrect(){
+  percentCorrect() {
     return this.numberCorrect / this.guesses.length * 100 + '%';
   }
 }

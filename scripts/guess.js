@@ -3,11 +3,11 @@ class Guess {
     this.response = response;
     this.question = question;
   }
-  correct(){
+  correct() {
     let { answer } = this.question;
     return answer === this.response ? true : false;
   }
-  feedback(){
+  feedback() {
     return this.correct() ? 'Correct!' : 'Incorrect!!!';
   }
 }

@@ -1,11 +1,11 @@
-class Deck{
-  constructor({ array}){
+class Deck {
+  constructor({ array}) {
     this.cards = array || [];
   }
-  addCard(card){
+  addCard(card) {
     this.cards.push(card);
   }
-  count(){
+  count() {
     return this.cards.length;
   }
 }

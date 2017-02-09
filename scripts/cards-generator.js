@@ -5,7 +5,7 @@ class CardGenerator {
   constructor({ filePath }){
     this.cards = this.splitter(filePath);
   }
-  splitter(filePath){
+  splitter(filePath) {
     let words = fs.readFileSync(`./${filePath}`, 'utf8').split('\n');
     return words.map ( card => {
       let cardSplit    = card.split(',');
